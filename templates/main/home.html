@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+home
+{% endblock title %}
+
+{% load static %} 
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>Welcome, {{ user.username }}!</h1>
+    {% else %}
+        <h1>Welcome to PicSquad!</h1>
+    {% endif %}
+    <p>{{ hello }}</p>
+
+    <!-- Display the image -->
+    <img src="/static/media_root/picsquad.jpg" alt="Your Image Alt Text" style="max-width: 100%; height: auto;">
+    <!-- Add other content as needed -->
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    $(document).ready(function(){
+        console.log('working')
+    })
+</script>
+{% endblock scripts %}
